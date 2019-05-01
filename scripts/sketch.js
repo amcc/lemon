@@ -53,14 +53,14 @@ function gotResult(error, results) {
     // label += resultNumber + " - " + (1000-resultNumber)/10 + "%";
 
     // bar length as number out of 1000
-    // barLength = (1000-resultNumber)/1000 * windowWidth;
+    // barLength = (1000-resultNumber)/1000 * width;
 
     // bar length as percentage of best guess
     barLength =
       (results[resultNumber].probability / results[0].probability) *
-      windowWidth;
+      width;
     // bar length as percentage of best guess with a bit of position
-    // barLength = results[resultNumber].probability/results[0].probability * windowWidth;
+    // barLength = results[resultNumber].probability/results[0].probability * width;
   }
 }
 
@@ -92,7 +92,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  // background(0);
   // only predict every now and then
   if (countDown == 0) {
     mobilenet.predict(1000, gotResult);
@@ -105,25 +105,26 @@ function draw() {
   }
   // make the bars and text...
   // height for both bars
-  var yellowRectHeight = windowHeight / 10;
+  var yellowRectHeight = height / 10;
   // make a white bar at the top
   //fill(255, 40);
-  // rect(0,0,windowWidth, yellowRectHeight)
+  // rect(0,0,width, yellowRectHeight)
   // make a yellow lemon rating bar!
   fill(255, 255, 51);
   noStroke();
-  rect(0, windowHeight - yellowRectHeight, barLength, yellowRectHeight);
+  rect(0, height - yellowRectHeight, barLength, yellowRectHeight);
   // make the text
   fill(255);
   textFont("Roboto Condensed");
-  textSize(windowHeight / 19);
+  textSize(height / 19);
   text(label, 20, height / 2);
+  clear();
 }
 
 function showVideoImage(video) {
   // lay out the video
   var vidRatio = video.width / video.height;
-  var screenRatio = windowWidth / windowHeight;
+  var screenRatio = width / height;
   var vidWidth;
   var vidHeight;
   var vidXPos;
@@ -132,21 +133,21 @@ function showVideoImage(video) {
   console.log("video");
   console.log(video);
   if (screenRatio > 1) {
-    vidWidth = windowWidth;
-    vidHeight = windowWidth / vidRatio;
+    vidWidth = width;
+    vidHeight = width / vidRatio;
     vidXPos = 0;
-    vidYPos = (windowWidth / vidRatio - windowHeight) / 2;
-    image(video, vidXPos, -vidYPos, windowWidth, windowWidth / vidRatio);
+    vidYPos = (width / vidRatio - height) / 2;
+    image(video, vidXPos, -vidYPos, width, width / vidRatio);
   } else {
-    vidWidth = windowHeight * vidRatio;
-    vidHeight = windowHeight;
-    vidXPos = (windowHeight * vidRatio - windowWidth) / 2;
+    vidWidth = height * vidRatio;
+    vidHeight = height;
+    vidXPos = (height * vidRatio - width) / 2;
     vidYPos = 0;
     image(video, vidXPos, vidYPos, vidWidth, vidHeight);
     console.log("-vidXPos " + -vidXPos);
     console.log("vidYPos " + vidYPos);
-    console.log("windowHeight*vidRatio " + windowHeight * vidRatio);
-    console.log("windowHeight " + windowHeight);
+    console.log("height*vidRatio " + height * vidRatio);
+    console.log("height " + height);
   }
 }
 
