@@ -114,7 +114,7 @@ function draw() {
     vidHeight = windowHeight;
     vidXPos = ((windowHeight*vidRatio) - windowWidth) / 2;
     vidYPos = 0;
-    image(video, -vidXPos, vidYPos, windowHeight*vidRatio, windowHeight);
+    image(video, 0, vidYPos, windowHeight*vidRatio, windowHeight);
     console.log("-vidXPos " + -vidXPos);
     console.log("vidYPos " + vidYPos);
     console.log("windowHeight*vidRatio " + windowHeight*vidRatio);
