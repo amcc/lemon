@@ -77,7 +77,7 @@ function setup() {
       }
     },
     function() {
-      videoLoaded = true;
+      // videoLoaded = true;
       // console.log('capture ready.')
     }
   );
