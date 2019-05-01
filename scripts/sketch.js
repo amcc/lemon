@@ -63,6 +63,7 @@ function gotResult(error, results) {
 function setup() {
   // put setup code here
   createCanvas(windowWidth, windowHeight);
+  console.log("the width is " + width + " and the height is " + height);
   label = "learning...";
   video = createCapture({
         audio: false,
