@@ -125,8 +125,8 @@ function draw() {
   rect(0, windowHeight-yellowRectHeight, barLength, yellowRectHeight);
   // make the text
   fill(255);
-  textFont("Montserrat");
-  textSize(windowHeight/16);
+  textFont("Roboto Condensed");
+  textSize(windowHeight/19);
   text(label, 20, height/2);
 }
 
