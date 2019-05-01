@@ -67,8 +67,8 @@ function gotResult(error, results) {
 function setup() {
   // put setup code here
   createCanvas(windowWidth, windowHeight);
-  console.log("the width is " + width + " and the height is " + height);
-  label = "learning...";
+  // console.log("the width is " + width + " and the height is " + height);
+  label = "loading AI model";
   video = createCapture(
     {
       audio: false,
@@ -101,9 +101,12 @@ function draw() {
   }
   countDown--;
 
-  if(videoLoaded){
-    showVideoImage(video);
-  }
+  // we've removed the stuff for making video into image
+  // very slow on ios esp and errorsome:
+  // if(videoLoaded){
+  //   showVideoImage(video);
+  // }
+
   // make the bars and text...
   // height for both bars
   var yellowRectHeight = height / 10;
@@ -121,6 +124,7 @@ function draw() {
   text(label, 20, height / 2);
 }
 
+// this is depreciated now
 function showVideoImage(video) {
   // lay out the video
   var vidRatio = video.width / video.height;
@@ -130,8 +134,8 @@ function showVideoImage(video) {
   var vidXPos;
   var vidYPos;
   // alter the video depending on the screen ratio
-  console.log("video");
-  console.log(video);
+  // console.log("video");
+  // console.log(video);
   if (screenRatio > 1) {
     vidWidth = width;
     vidHeight = width / vidRatio;
@@ -144,10 +148,6 @@ function showVideoImage(video) {
     vidXPos = (height * vidRatio - width) / 2;
     vidYPos = 0;
     image(video, vidXPos, vidYPos, vidWidth, vidHeight);
-    console.log("-vidXPos " + -vidXPos);
-    console.log("vidYPos " + vidYPos);
-    console.log("height*vidRatio " + height * vidRatio);
-    console.log("height " + height);
   }
 }
 
