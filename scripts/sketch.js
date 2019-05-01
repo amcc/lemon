@@ -101,6 +101,8 @@ function draw() {
   var vidXPos;
   var vidYPos;
   // alter the video depending on the screen ratio
+  console.log("video");
+  console.log(video);
   if (screenRatio > 1) {
     vidWidth = windowWidth;
     vidHeight = windowWidth / vidRatio;
