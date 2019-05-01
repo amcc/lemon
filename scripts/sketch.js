@@ -125,7 +125,7 @@ function draw() {
   rect(0, windowHeight-yellowRectHeight, barLength, yellowRectHeight);
   // make the text
   fill(255);
-  textFont("Nova Mono");
+  textFont("Montserrat");
   textSize(windowHeight/16);
   text(label, 20, height/2);
 }
