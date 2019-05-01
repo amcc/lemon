@@ -115,6 +115,11 @@ function draw() {
     vidXPos = ((windowHeight*vidRatio) - windowWidth) / 2;
     vidYPos = 0;
     image(video, -vidXPos, vidYPos, windowHeight*vidRatio, windowHeight);
+    console.log("-vidXPos " + -vidXPos);
+    console.log("vidYPos " + vidYPos);
+    console.log("windowHeight*vidRatio " + windowHeight*vidRatio);
+    console.log("windowHeight " + windowHeight);
+
   }
   // make the bars and text...
   // height for both bars
