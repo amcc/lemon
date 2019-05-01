@@ -92,6 +92,7 @@ function setup() {
 }
 
 function draw() {
+  clear();
   // background(0);
   // only predict every now and then
   if (countDown == 0) {
@@ -118,7 +119,6 @@ function draw() {
   textFont("Roboto Condensed");
   textSize(height / 19);
   text(label, 20, height / 2);
-  clear();
 }
 
 function showVideoImage(video) {
