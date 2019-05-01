@@ -74,7 +74,7 @@ function setup() {
         // console.log('capture ready.')
     });
     video.elt.setAttribute('playsinline', '');
-    video.hide();
+    // video.hide();
     // video.size(w, h);
     // canvas = createCanvas(w, h);
   // video = createCapture(constraints);
